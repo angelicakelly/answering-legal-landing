@@ -1,26 +1,101 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* ---------- Brand tokens ---------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy-900: #161641;
+  --navy-800: #162b53;
+  --blue-600: #0360e6;
+  --blue-300: #3cced7;
+  --blue-200: #cddffa;
+
+  --gray-900: #141414;
+  --gray-700: #999999;
+  --gray-200: #d2edef;
+  --gray-100: #f7f5f5;
+  --white: #ffffff;
+
+  --yellow-400: #fbbf24;
+  --danger-500: #ef4444;
+  --green-50: #ecfdf5;
+  --green-200: #a7f3d0;
+  --green-800: #065f46;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ---------- Base (Montserrat por defecto si está configurada en Tailwind) ---------- */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply text-[var(--white)];
+    /* Si en tailwind.config tienes fontFamily: { sans: ['Montserrat', ...] } */
+    @apply font-sans;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ---------- Typography (match a la guía) ---------- */
+/* H1 – Bold 700 / 64 (mobile 40 para mejor escala) */
+h1, .h1 {
+  @apply font-bold leading-tight text-[40px] md:text-[64px];
+}
+
+/* H2 – Bold 700 / 32 (mismo tamaño en mobile y desktop) */
+h2, .h2 {
+  @apply font-bold leading-snug text-[32px];
+}
+
+/* H3 – Bold 700 / 24 */
+h3, .h3 {
+  @apply font-bold leading-snug text-[24px];
+}
+
+/* Subtitle 1 – SemiBold 600 / 24 */
+.subtitle1 {
+  @apply font-semibold text-[24px] leading-snug;
+}
+
+/* Subtitle 2 – SemiBold 600 / 16 */
+.subtitle2 {
+  @apply font-semibold text-[16px] leading-6;
+}
+
+/* Body 1 – Regular 400 / 16 (line-height 24) */
+.body1 {
+  @apply font-normal text-[16px] leading-6;
+}
+
+/* Body 2 – Regular 400 / 20 (line-height 32) */
+.body2 {
+  @apply font-normal text-[20px] leading-8;
+}
+
+/* Small 1 – SemiBold 600 / 12 */
+.small, .small1 {
+  @apply font-semibold text-[12px] leading-4;
+}
+
+/* ---------- Forms ---------- */
+.label {
+  @apply block text-sm font-semibold mb-1 text-[var(--gray-900)];
+}
+
+.input {
+  @apply w-full rounded-md border border-[var(--gray-200)] bg-white px-3 py-2
+  focus:ring-2 focus:ring-[var(--blue-300)] focus:border-[var(--blue-300)] outline-none;
+}
+
+/* ---------- Reusable ---------- */
+.card {
+  @apply bg-white border border-[var(--gray-200)] rounded-xl shadow-sm hover:shadow-md transition;
+}
+
+.section {
+  @apply py-16 px-6 md:px-12 max-w-7xl mx-auto;
+}
+
+.bg-light-gray {
+  background-color: var(--gray-100);
 }
