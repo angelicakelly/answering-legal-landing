@@ -741,30 +741,17 @@ export default function Page() {
       {/* ---------- Footer (pixel-accurate mobile, desktop unchanged) ---------- */}
     <footer className="bg-[#161641] text-white">
       {/* Top band: copy + form (stack on mobile, 2 cols on desktop) */}
-      <section
-        className="
-          mx-auto max-w-7xl
-          px-5 md:px-10
-          pt-8 md:pt-20
-          pb-6 md:pb-10
-          grid md:grid-cols-2 gap-6 md:gap-16 items-start
-        "
-      >
+       <section className="mx-auto max-w-7xl px-5 md:px-10 pt-8 md:pt-20 pb-6 md:pb-10 grid md:grid-cols-2 gap-6 md:gap-16 items-center">
         {/* Copy block — first on mobile, left on desktop */}
         <div className="order-1 md:order-1">
-          <h2
-            className="
-              text-[30px] leading-[1.12] font-extrabold tracking-tight
-              md:text-[34px]
-            "
-          >
+          <p className="text-[50px] leading-[1.12] font-extrabold tracking-tight">
             24/7 coverage at a
             <br />fraction of the cost
             <br />of in-house
             <br />receptionists.
-          </h2>
+          </p>
 
-          <p className="mt-4 text-white/90 text-[15px] leading-[1.6] md:max-w-[560px]">
+          <p className="mt-4 text-white/90 text-[30px] leading-[1.6] md:max-w-[560px]">
             Don’t believe us? Fill out the form on the right, and we’ll take you to our pricing
             page, where you can find out just how little 24/7 legal intake will cost you.
           </p>
@@ -897,7 +884,7 @@ export default function Page() {
         <div className="mt-6 mb-8 md:mb-10 text-center">
           <p className="text-white font-extrabold">Have questions? Our team is here</p>
           <p className="text-white font-extrabold">to help. Call 631-400-8888</p>
-          <p className="text-[#3CCED7] text-[11px] tracking-wide mt-1 font-extrabold">
+          <p className="text-[#3CCED7] text-[15px] tracking-wide mt-1 font-extrabold">
             MONDAY TO FRIDAY FROM 9 AM TO 7 PM EST.
           </p>
         </div>
